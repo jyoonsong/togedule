@@ -4,11 +4,11 @@
 
 This repository accompanies our research paper titled ["Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings."]()
 
-## What is Togedule?
+## About Togedule
 
 Togedule is a dynamic scheduling tool, which refers to a voting mechanism that updates the set of choices to be shown and the format in which they are presented based on the inputs of attendees. For attendees, by switching between poll and calendar views depending on the number of promising candidates, Togedule leverages the pros and cons of each format. We used GPT-4 to keep the adaptation flexible and deal with various circumstances. For organizers, Togedule provides recommendations on which times to accept as the final meeting time taking into account the priority and preference of each attendee.
 
-## Directory structure
+## Structure
 
 The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
 Details are provided in the paper above. 
@@ -18,7 +18,7 @@ Below, we document the steps for setting up and running Togedule on your local m
 
 Alternatively, you can try out [our live demo](https://togedule.vercel.app).
 
-## Running Togedule locally
+## Running an instance locally
 
 ### Step 1. Clone the repository
 
