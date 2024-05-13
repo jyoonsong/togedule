@@ -10,8 +10,9 @@ Togedule is a dynamic scheduling tool, which refers to a voting mechanism that u
 
 ## Directory structure
 
-The `client` and `server` directories contain the code for the Togedule system. The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
+The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
 Details are provided in the paper above. 
+The `client` and `server` directories contain the code for the Togedule system. 
 Below, we document the steps for setting up and running Togedule on your local machine.
 
 Alternatively, you can try out [our live demo](https://togedule.vercel.app).
