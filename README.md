@@ -6,6 +6,8 @@ This repository accompanies our research paper titled ["Togedule: Adaptive Repre
 
 Togedule is a dynamic scheduling tool, which refers to a voting mechanism that updates the set of choices to be shown and the format in which they are presented based on the inputs of attendees. For attendees, by switching between poll and calendar views depending on the number of promising candidates, Togedule leverages the pros and cons of each format. We used GPT-4 to keep the adaptation flexible and deal with various circumstances. For organizers, Togedule provides recommendations on which times to accept as the final meeting time taking into account the priority and preference of each attendee.
 
+## Directory structure
+
 The `client` and `server` directories contain the code for the Togedule system. The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
 Details are provided in the paper above. 
 Below, we document the steps for setting up and running Togedule on your local machine.
