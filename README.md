@@ -4,6 +4,8 @@
 
 This repository accompanies our research paper titled ["Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings."]()
 
+Togedule is a dynamic scheduling tool that continuously adapts to the inputs of attendees using a large language model (LLM). A dynamic scheduling tool refers to a voting mechanism that updates the set of choices to be shown and the format in which they are presented in real time. For attendees, Togedule keeps adjusting the pool of candidate times based on how promising each time is and optimizes the presentation of these candidate times. By switching between poll and calendar views depending on the number of promising candidates, Togedule leverages the pros and cons of each format. We used GPT-4 to keep the adaptation flexible and deal with various circumstances. For organizers, Togedule provides recommendations on which times to accept as the final meeting time taking into account the priority and preference of each attendee.
+
 The `client` and `server` directories contain the code for the Togedule system. The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
 Details are provided in the paper above. 
 Below, we document the steps for setting up and running Togedule on your local machine.
