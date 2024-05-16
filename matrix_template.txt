@@ -1,0 +1,19 @@
+/** 
+* Paste one or more documents here
+*/
+{
+  "dates": [
+    1656302400000,
+    1656388800000,
+    1656475200000,
+    1656561600000
+  ],
+  "startTime": 9,
+  "endTime": 17,
+  "duration": 30,
+  "priority": [],
+  "group": 0,
+  "selections": [], 
+  "maybes": [],   
+}  
+  
