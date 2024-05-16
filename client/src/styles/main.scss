@@ -1,0 +1,29 @@
+$primary-color: #1890ff !default;
+$bg-color: rgba(248, 249, 250, 1) !default;
+$dark-bg-color: #001529 !default;
+$purple: #381d5b !default;
+$red: #9a3516 !default;
+$dark-red: #580707 !default;
+
+$yellow: #fffab5 !default;
+$orange: #f5a623 !default;
+
+$placeholder-color: #a0a8ad;
+$reactTagColorGray: #e1e1e1;
+$reactTagHeight: 2.375em;
+$reactTagFontSize: 1em;
+$reactTagBorderRadius: 3px;
+
+$form-padding-y: 0.375rem;
+$form-padding-x: 0.5rem;
+
+// Basic
+@import "components/normalize";
+
+// Component-specific
+@import "components/navbar";
+@import "components/home";
+@import "components/admin";
+
+// ETC
+@import "components/custom";

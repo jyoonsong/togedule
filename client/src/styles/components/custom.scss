@@ -1,0 +1,77 @@
+
+.item-container {
+  display: grid;
+  grid-template-columns: 13% 13% 13% 13% 13% 13% 13%;
+  gap: 1% 1%;
+}
+
+.item {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px solid black;
+}
+
+.selected {
+  background-color: chocolate;
+}
+
+.selection-box-info {
+  margin-top: 10px;
+}
+
+.rmdp-time-picker {
+  .dvdr, div:nth-of-type(2) {
+    display: none !important;
+  }
+}
+
+.or-divider {
+  position: relative;
+  &:after {
+    content: "OR";
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    top: -0.75rem;
+    background-color: #fff;
+    width: 40px;
+  }
+}
+
+.rmdp-day.rmdp-today span {
+  border: 3px solid #c2dde7;
+  background: transparent;
+  color: inherit;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  border: none;
+}
+
+// calendar
+.circle {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.css-gyiown .VerticalAppointment-title {
+  white-space: pre-wrap !important;
+  line-height: 1.3;
+}
+
+// words
+.accordion-button {
+  background-color: #efefef;
+}
+
+#scheduler {
+  height: 100%;
+  position: fixed;
+  top: 120px;
+  width: min-content;
+}
