@@ -11,9 +11,9 @@ Togedule is a dynamic scheduling tool, which refers to a voting mechanism that u
 ## Directory Structure
 
 The `data` directory contains the anonymized data we collected from the two controlled experiments that evaluate the Togedule system.
-Details are provided in the paper above. 
+Details are provided in the paper above.
 
-The `client` and `server` directories contain the code for the Togedule system. 
+The `client` and `server` directories contain the code for the Togedule system.
 Below, we document the steps for setting up and running Togedule on your local machine.
 
 Alternatively, you can try out [our live demo](https://togedule.vercel.app).
@@ -21,37 +21,43 @@ Alternatively, you can try out [our live demo](https://togedule.vercel.app).
 ## Running an instance locally
 
 ### Step 1. Clone the repository
+
 Run `git clone` in your terminal.
 
 ### Step 2. Set up environment variables
+
 Create a `.env` file at the root. The `.env.example` file contains the example of what the dotenv file should look like.
 
-### Step 3. Create a MongoDB cluster 
+### Step 3. Create a MongoDB cluster
+
 Go to [the MongoDB website](https://mongodb.com/) and create a cluster.
 Set `MONGO_URL` that starts with `mongodb+srv://`. Set the name of the database as `DB_NAME`.
 
 ### Step 4. Get OPEN AI API keys
+
 Go to [the Open AI website](https://platform.openai.com/api-keys) and create an API key.
 Set the organization ID as `OPENAI_ORG_ID` and the API key as `OPENAI_API_KEY`
 
 ### Step 5. Run the server and client
-Run `npm install` and `npm run dev` in your terminal.
+
+Run `npm install` and `npm run dev` in your terminal. The recommended node version is 16.
 
 ## Authors and Citation
+
 Authors: Jaeyoon Song, Zahra Ashktorab, and Thomas W. Malone
 
 Please cite our paper if you use the code or data in this repository.
+
 ```latex
-@inproceedings{Song2025Togedule,  
-  author = {Song, Jaeyoon and Ashktorab, Zahra and Malone, Thomas W.},  
-  title = {Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings},  
-  year = {2025},  
-  publisher = {Association for Computing Machinery},  
-  address = {New York, NY, USA},  
-  booktitle = {In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23)},  
-  keywords = {Human-AI interaction, agents, generative AI, large language models},  
-  location = {San Francisco, CA, USA},  
+@inproceedings{Song2025Togedule,
+  author = {Song, Jaeyoon and Ashktorab, Zahra and Malone, Thomas W.},
+  title = {Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings},
+  year = {2025},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  booktitle = {In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23)},
+  keywords = {Human-AI interaction, agents, generative AI, large language models},
+  location = {San Francisco, CA, USA},
   series = {CSCW '25}
 }
 ```
-
