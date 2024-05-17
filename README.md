@@ -36,7 +36,7 @@ Set `MONGO_URL` that starts with `mongodb+srv://`. Set the name of the database 
 ### Step 4. Get OPEN AI API keys
 
 Go to [the Open AI website](https://platform.openai.com/api-keys) and create an API key.
-Set the organization ID as `OPENAI_ORG_ID` and the API key as `OPENAI_API_KEY`
+Set the organization ID as `OPENAI_ORG_ID` and the API key as `OPENAI_API_KEY`. In the case of `OPENAI_OWNER`, it should be `admin` when you want to use your own API keys and `user` when you want users to use their API keys.
 
 ### Step 5. Run the server and client
 
