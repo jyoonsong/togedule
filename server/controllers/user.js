@@ -2,20 +2,23 @@ const OpenAI = require("openai");
 const dotenv = require("dotenv");
 
 const User = require("../models/User");
+const Event = require("../models/Event");
 
 // create a new OAuth client used to verify google sign-in
 dotenv.config();
 
 const decideMode = async (req, res) => {
+    const orgId =
+        process.env.OPENAI_OWNER === "user"
+            ? req.body.openaiOrgId
+            : process.env.OPENAI_ORG_ID;
+    const apiKey =
+        process.env.OPENAI_OWNER === "user"
+            ? req.body.openaiApiKey
+            : process.env.OPENAI_API_KEY;
     const openai = new OpenAI({
-        organization:
-            process.env.OPENAI_OWNER === "user"
-                ? req.body.openaiOrgId
-                : process.env.OPENAI_ORG_ID,
-        apiKey:
-            process.env.OPENAI_OWNER === "user"
-                ? req.body.openaiApiKey
-                : process.env.OPENAI_API_KEY,
+        organization: orgId,
+        apiKey: apiKey,
     });
 
     try {
@@ -33,9 +36,7 @@ So far, ${numFinished} out of ${numExpectedTotal} participants indicated their a
 ${Object.keys(req.body.selections)
     .map((time) => {
         const nameArr = req.body.selections[time];
-        const names = nameArr
-            .map((name) => name.substr(-2, 2).toUpperCase())
-            .join(", ");
+        const names = nameArr.join(", ");
         const timeStr = new Date(parseInt(time)).toLocaleString();
         const verb = nameArr.length === 1 ? "is" : "are";
         return `On ${timeStr}, ${names} ${verb} available.`;
@@ -104,26 +105,95 @@ Respond in JSON format with the score and reason like the example output below. 
     }
 };
 
-// gets user from DB, or makes a new account if it doesn't exist yet
-const getOrCreateUser = async (name) => {
-    // the "sub" field means "subject", which is a unique identifier for each user
-    const existingUser = await User.findOne({ name: name });
-
-    if (existingUser) {
-        return existingUser;
+const getNames = async (req, res) => {
+    try {
+        const names = [];
+        for (let id of req.body.ids) {
+            if (id?.length > 0 && id !== "null" && id !== "undefined") {
+                const user = await User.findById(id);
+                if (user) {
+                    names.push(user.name);
+                } else {
+                    names.push(undefined);
+                }
+            } else {
+                names.push(undefined);
+            }
+        }
+        return res.status(200).send({ names });
+    } catch (err) {
+        console.log(`Failed to sign up: ${err}`);
+        res.status(401).send({ err });
     }
+};
 
+const updateUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.session.user?._id);
+        if (user) {
+            user.username = req.body.username;
+            user.password = req.body.password;
+            await user.save();
+            req.session.user = user;
+
+            return res.status(200).send(user);
+        } else {
+            res.status(404).send({ err: "No such user" });
+        }
+    } catch (err) {
+        console.log(`Failed to sign up: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
+// gets user from DB, or makes a new account if it doesn't exist yet
+const createUser = async (name, eventId) => {
     const newUser = new User({
         name: name || "",
+        attendingEvents: [eventId],
+        organizingEvents: [],
     });
     await newUser.save();
 
     return newUser;
 };
 
+const signup = async (req, res) => {
+    try {
+        const user = await createUser(req.body.name, req.body.eventId);
+
+        if (user) {
+            const foundEvent = user.attendingEvents.find((e) =>
+                e.equals(req.body.eventId)
+            );
+            if (!foundEvent) {
+                user.attendingEvents = [
+                    ...user.attendingEvents,
+                    req.body.eventId,
+                ];
+            }
+            await user.save();
+            req.session.user = user;
+
+            const event = await Event.findById(req.body.eventId);
+            const found = event.attendees.find((a) => a.equals(user._id));
+            if (!found) {
+                event.attendees = [...event.attendees, user._id];
+                await event.save();
+            }
+            return res.status(200).send(user);
+        } else {
+            res.status(404).send({ err: "No such user" });
+        }
+    } catch (err) {
+        console.log(`Failed to sign up: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
 const login = async (req, res) => {
     try {
-        const user = await getOrCreateUser(req.body.name);
+        const user = await User.findById(req.body.userId);
 
         if (user) {
             req.session.user = user;
@@ -138,6 +208,23 @@ const login = async (req, res) => {
     }
 };
 
+const loginByUsername = async (req, res) => {
+    try {
+        const user = await User.findOne({ username: req.body.username });
+
+        if (user && user.password === req.body.password) {
+            req.session.user = user;
+            await user.save();
+            res.status(200).send(user);
+        } else {
+            res.status(404).send({ err: "No such user or wrong password" });
+        }
+    } catch (err) {
+        console.log(`Failed to log in using username: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
 function populateCurrentUser(req, res, next) {
     // simply populate "req.user" for convenience
     req.user = req.session.user;
@@ -146,6 +233,11 @@ function populateCurrentUser(req, res, next) {
 
 module.exports = {
     login,
+    signup,
     populateCurrentUser,
     decideMode,
+    createUser,
+    getNames,
+    updateUser,
+    loginByUsername,
 };

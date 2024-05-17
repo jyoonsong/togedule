@@ -14,14 +14,18 @@ const user = require("../controllers/user");
 const router = express.Router();
 
 router.post("/login", user.login);
+router.post("/username", user.loginByUsername);
+router.post("/signup", user.signup);
 router.post("/decide", user.decideMode);
+router.post("/names", user.getNames);
+router.post("/update", user.updateUser);
 router.get("/whoami", (req, res) => {
-    if (!req.user) {
+    if (!req.session.user) {
         // not logged in
         return res.status(200).send({});
     }
 
-    res.status(200).send(req.user);
+    res.status(200).send(req.session.user);
 });
 
 module.exports = router;

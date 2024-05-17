@@ -1,4 +1,6 @@
 const Event = require("../models/Event");
+const User = require("../models/User");
+const { createUser } = require("./user");
 
 const updateBoth = async (req, res) => {
     try {
@@ -6,26 +8,26 @@ const updateBoth = async (req, res) => {
 
         if (event) {
             const filtered = event.maybes.filter(
-                (sel) => sel.name !== req.body.name
+                (sel) => sel.user_id !== req.session.user?._id
             );
             const newMaybe = [
                 ...filtered,
                 {
                     user_id: req.session.user?._id || "null",
-                    name: req.body.name,
+                    name: req.session.user?.name,
                     selection: req.body.maybe,
                 },
             ];
             event.maybes = newMaybe;
 
             const filtered2 = event.selections.filter(
-                (sel) => sel.name !== req.body.name
+                (sel) => sel.user_id !== req.session.user?._id
             );
             const newSelection = [
                 ...filtered2,
                 {
                     user_id: req.session.user?._id || "null",
-                    name: req.body.name,
+                    name: req.session.user?.name,
                     selection: req.body.selection,
                 },
             ];
@@ -52,13 +54,13 @@ const updateMaybes = async (req, res) => {
             delete req.body.__v;
 
             const filtered = event.maybes.filter(
-                (sel) => sel.name !== req.body.name
+                (sel) => sel.user_id !== req.session.user?._id
             );
             const newMaybe = [
                 ...filtered,
                 {
                     user_id: req.session.user?._id || "null",
-                    name: req.body.name,
+                    name: req.session.user?.name,
                     selection: req.body.selection,
                 },
             ];
@@ -84,13 +86,13 @@ const updateSelections = async (req, res) => {
             delete req.body.__v;
 
             const filtered = event.selections.filter(
-                (sel) => sel.name !== req.body.name
+                (sel) => sel.user_id !== req.session.user?._id
             );
             const newSelection = [
                 ...filtered,
                 {
                     user_id: req.session.user?._id || "null",
-                    name: req.body.name,
+                    name: req.session.user?.name,
                     selection: req.body.selection,
                     note: req.body.note,
                 },
@@ -108,20 +110,67 @@ const updateSelections = async (req, res) => {
     }
 };
 
+const updateName = async (req, res) => {
+    try {
+        // update name
+        const user = await User.findById(req.session.user?._id);
+        user.name = req.body.name;
+        const foundEvent = user.attendingEvents.find((e) =>
+            e.equals(req.body.eventId)
+        );
+        if (!foundEvent) {
+            user.attendingEvents = [...user.attendingEvents, req.body.eventId];
+        }
+        await user.save();
+        req.session.user = user;
+
+        const event = await Event.findById(req.body.eventId);
+        const found = event.attendees.find((a) => a.equals(user._id));
+        if (!found) {
+            event.attendees = [...event.attendees, user._id];
+            await event.save();
+        }
+
+        return res.status(200).send({ numAttendees: event.attendees.length });
+    } catch (err) {
+        console.log(`Failed to update name: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
 const createEvent = async (req, res) => {
     try {
+        if (!req.session.user) {
+            // create user
+            const user = await createUser("");
+            req.session.user = user;
+        }
+
         // create log
         const newEvent = new Event({
             startTime: req.body.startTime,
             endTime: req.body.endTime,
             dates: req.body.dates,
             duration: req.body.duration,
-            organizer: req.session.user?._id || "null",
+            organizer: req.session.user?._id,
             selections: [],
             maybes: [],
             priority: [],
+
+            title: req.body.title,
+            password: req.body.password,
+            total: req.body.total,
         });
         await newEvent.save();
+
+        const currentUser = await User.findById(req.session.user?._id);
+        const newOrganizingEvents = [
+            ...currentUser.organizingEvents,
+            newEvent._id,
+        ];
+        currentUser.organizingEvents = newOrganizingEvents;
+        await currentUser.save();
+        req.session.user = currentUser;
 
         res.status(200).send({ ...newEvent._doc, success: true });
     } catch (err) {
@@ -136,6 +185,30 @@ const getEvent = async (req, res) => {
         res.status(200).send(event);
     } catch (err) {
         console.log(`Failed to get event: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
+const getEvents = async (req, res) => {
+    try {
+        const events = [];
+        for (let id of req.body.ids) {
+            if (id?.length > 0) {
+                const event = await Event.findById(id);
+                if (event) {
+                    events.push({
+                        _id: event._id,
+                        title: event.title,
+                        password: event.password,
+                        total: event.total,
+                        numAttendees: event.attendees.length,
+                    });
+                }
+            }
+        }
+        return res.status(200).send(events);
+    } catch (err) {
+        console.log(`Failed to get events: ${err}`);
         res.status(401).send({ err });
     }
 };
@@ -189,8 +262,10 @@ module.exports = {
     updateBoth,
     updateMaybes,
     updateSelections,
+    updateName,
     createEvent,
     getEvent,
     savePriority,
     saveNote,
+    getEvents,
 };

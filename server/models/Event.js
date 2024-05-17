@@ -49,6 +49,7 @@ const EventSchema = new Schema(
         },
         title: String,
         password: String,
+        total: Number,
     },
     { timestamps: true, versionKey: false }
 );

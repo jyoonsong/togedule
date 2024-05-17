@@ -15,6 +15,8 @@ const router = express.Router();
 
 router.post("/create", event_controller.createEvent);
 router.get("/get/:id", event_controller.getEvent);
+router.post("/events", event_controller.getEvents);
+router.post("/name", event_controller.updateName);
 router.post("/selections/:id", event_controller.updateSelections);
 router.post("/maybes/:id", event_controller.updateMaybes);
 router.post("/both/:id", event_controller.updateBoth);
