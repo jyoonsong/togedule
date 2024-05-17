@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api" },
+        {"source": "/t", "destination": "/"},
+        {"source": "/o", "destination": "/"},
+        {"source": "/new", "destination": "/"},
+        {"source": "/settings", "destination": "/"}
+    ]
+}
