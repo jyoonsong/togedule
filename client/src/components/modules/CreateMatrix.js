@@ -237,7 +237,7 @@ const CreateMatrix = () => {
                     </Row>
                 </Col>
 
-                <Col xs={12}>
+                <Col xs={12} className="mb-5 pb-5">
                     <Button onClick={handleSubmit}>Find a Time</Button>
                 </Col>
             </Row>
