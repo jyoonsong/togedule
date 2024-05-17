@@ -1,3 +1,24 @@
+.navbar {
+  height: 53px;
+  margin-bottom: 17px;
+}
+
+.event {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  height: 173px;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  &.info {
+    background-color: #e7f5ff;
+  }
+}
+
 .full-height {
   height: 100%;
   height: 100vh;
@@ -161,25 +182,27 @@
 }
 
 $oc-blue-list: (
-  "0": #e7f5ff,
-  "1": #d0ebff,
-  "2": #a5d8ff,
-  "3": #74c0fc,
-  "4": #4dabf7,
-  "5": #339af0,
-  "6": #228be6,
-  "7": #1c7ed6,
-  "8": #1971c2,
-  "9": #1864ab,
-  "10": #08559b,
+  "0": #ffffff,
+  "1": #e7f5ff,
+  "2": #d0ebff,
+  "3": #a5d8ff,
+  "4": #74c0fc,
+  "5": #4dabf7,
+  "6": #339af0,
+  "7": #228be6,
+  "8": #1c7ed6,
+  "9": #1971c2,
+  "10": #1864ab,
+  "11": #08559b,
+  "12": #042748,
 );
 
 .small-scale {
-  @for $i from 0 through 5 {
+  @for $i from 0 through 6 {
     pointer-events: none;
     button:nth-of-type(#{$i + 1}) {
       background-color: map-get($oc-blue-list, #{2 * $i});
-      border-color: map-get($oc-blue-list, #{2 * $i});
+      border-color: #ccc;
       color: #aaa;
     }
   }
@@ -190,7 +213,7 @@ $oc-blue-list: (
     pointer-events: none;
     button:nth-of-type(#{$i + 1}) {
       background-color: map-get($oc-blue-list, #{$i});
-      border-color: map-get($oc-blue-list, #{$i});
+      border-color: #ccc;
       color: #aaa;
     }
   }
