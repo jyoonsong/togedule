@@ -44,11 +44,16 @@ const HomePage = () => {
             return;
         }
 
-        const response = await post("/api/username", {
-            username: username,
-            password: password,
-        });
-        setCurrentUser(response);
+        try {
+            const response = await post("/api/username", {
+                username: username,
+                password: password,
+            });
+            setCurrentUser(response);
+        } catch (err) {
+            console.log(err);
+            alert("Wrong username and/or password!");
+        }
     };
 
     return (
