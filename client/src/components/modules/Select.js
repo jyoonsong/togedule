@@ -1,10 +1,9 @@
 import React from "react";
-import { t } from "i18next";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 const Select = ({ title, options, mode, setMode }) => {
     const getVariant = (mode, title, index) => {
-        if (title === t("Sort")) {
+        if (title === "Sort") {
             return mode === index ? "primary" : "outline-secondary";
         } else {
             if (index === 0) {

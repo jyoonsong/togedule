@@ -82,7 +82,7 @@ const HomePage = () => {
                 </Col>
                 {organizingEvents?.map((event) => (
                     <Col xs={12} sm={6} md={4} lg={3} key={event._id}>
-                        <a href={`/t?id=${event._id}`} className="event">
+                        <a href={`/o?id=${event._id}`} className="event">
                             {event.title}
                             <small className="text-muted">
                                 {event.numAttendees} / {event.total} responded
@@ -100,7 +100,7 @@ const HomePage = () => {
                         Please log in if you have an account
                     </h5>
                     <Col xs="12" md="6">
-                        <Form.Label for="username">Username</Form.Label>
+                        <Form.Label htmlFor="username">Username</Form.Label>
                         <Form.Control
                             id="username"
                             type="text"
@@ -109,7 +109,7 @@ const HomePage = () => {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                        <Form.Label for="password">Password</Form.Label>
+                        <Form.Label htmlFor="password">Password</Form.Label>
                         <Form.Control
                             id="password"
                             type="password"

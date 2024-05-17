@@ -23,8 +23,10 @@ const PollSelector = ({
     names,
     priority,
     score,
+    dates,
+    setDates,
 }) => {
-    const [dates, setDates] = useState({});
+    // const [dates, setDates] = useState({});
 
     useEffect(() => {
         if (Object.keys(dates).length === 0) {
@@ -167,8 +169,8 @@ const PollSelector = ({
             <Grid
                 columns={1}
                 rows={selections.length}
-                columnGap="3px"
-                rowGap="3px"
+                columnGap="0"
+                rowGap="0"
                 className="px-5"
                 style={{
                     overflowX: "visible",

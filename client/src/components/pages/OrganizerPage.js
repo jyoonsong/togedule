@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 import { get } from "../../utils/utilities";
 import { useStore } from "../../store";
 
-import { t } from "i18next";
 import Main from "../modules/Main";
 
-const MainPage = () => {
+const OrganizerPage = () => {
     const currentUser = useStore((state) => state.currentUser);
     const getHistory = useStore((state) => state.getHistory);
     const history = getHistory();
@@ -16,12 +15,12 @@ const MainPage = () => {
     const [mode, setMode] = useState(0); // 0: matrix 1: poll
 
     useEffect(() => {
-        const id = history.location.search.split("=")[1];
+        const id = history?.location?.search?.split("=")[1];
 
-        if (!matrix) {
+        if (!matrix && id?.length > 0) {
             getMatrix(id);
         }
-    }, []);
+    }, [history]);
 
     const getMatrix = async (id) => {
         try {
@@ -46,14 +45,14 @@ const MainPage = () => {
     };
 
     return (
-        <>
+        <Container>
             {/* TODO: show this only when there are less than N promising candidates */}
             <div className="d-flex mt-md-3 mt-2">
                 <Button
                     variant="outline-primary"
                     onClick={() => setMode(mode === 0 ? 1 : 0)}
                 >
-                    🔁 {t(mode === 0 ? "See LESS options" : "See FULL options")}
+                    🔁 {mode === 0 ? "See LESS options" : "See FULL options"}
                 </Button>
             </div>
 
@@ -62,8 +61,8 @@ const MainPage = () => {
             ) : (
                 "Loading..."
             )}
-        </>
+        </Container>
     );
 };
 
-export default MainPage;
+export default OrganizerPage;

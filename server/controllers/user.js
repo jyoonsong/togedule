@@ -147,10 +147,10 @@ const updateUser = async (req, res) => {
 };
 
 // gets user from DB, or makes a new account if it doesn't exist yet
-const createUser = async (name, eventId) => {
+const createUser = async (name) => {
     const newUser = new User({
         name: name || "",
-        attendingEvents: [eventId],
+        attendingEvents: [],
         organizingEvents: [],
     });
     await newUser.save();
@@ -160,13 +160,19 @@ const createUser = async (name, eventId) => {
 
 const signup = async (req, res) => {
     try {
-        const user = await createUser(req.body.name, req.body.eventId);
+        const user = await createUser(req.body.name);
+
+        console.log("eventId", req.body.eventId);
 
         if (user) {
             const foundEvent = user.attendingEvents.find((e) =>
                 e.equals(req.body.eventId)
             );
-            if (!foundEvent) {
+            if (
+                !foundEvent &&
+                req.body.eventId &&
+                req.body.eventId !== "null"
+            ) {
                 user.attendingEvents = [
                     ...user.attendingEvents,
                     req.body.eventId,

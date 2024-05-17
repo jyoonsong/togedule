@@ -13,12 +13,7 @@ import Scale from "../modules/Scale";
 import { notification } from "antd-notifications-messages";
 
 const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
-    const initialDates = [
-        "2022-09-19",
-        "2022-09-20",
-        "2022-09-21",
-        "2022-09-22",
-    ].map((date) => new Date(date));
+    const initialDates = matrix.dates.map((date) => new Date(date));
     const currentUser = useStore((state) => state.currentUser);
     const setCurrentUser = useStore((state) => state.setCurrentUser);
 
@@ -46,6 +41,9 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
 
     const [showSelector, setShowSelector] = useState(true);
     const [showGuide, setShowGuide] = useState(true);
+
+    const [dates, setDates] = useState([]);
+    const [pollDates, setPollDates] = useState({});
 
     const [name, setName] = useState(currentUser ? currentUser.name : "");
     const nameRef = useRef();
@@ -202,7 +200,7 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                 for (let day of initialDates) {
                     let omit = true;
                     const keys = Object.keys(otherSelections).filter(
-                        (k) => k >= day && k < day + 86400000
+                        (k) => k >= day && k < day + 86400000 // 1000 ms * 60 s * 60 m * 24 h (1 day)
                     );
                     if (threshold === 0 && keys?.length === 0) {
                         omit = false;
@@ -217,7 +215,6 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                         }
                     }
                     if (omit) {
-                        console.log(day);
                         newOmitDays.push(day);
                     }
                 }
@@ -229,15 +226,15 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                 // reduce the number of rows
                 const newOmitTimes = [];
                 let previous = true;
-                for (let time = 9; time < 21; time++) {
+                for (
+                    let time = matrix?.startTime;
+                    time < matrix?.endTime;
+                    time++
+                ) {
                     let omit = true;
-                    for (let day = 19; day <= 22; day++) {
-                        const key = new Date(
-                            `2022/09/${day} ${time}:00:00 GMT-0400`
-                        ).getTime();
-                        const key2 = new Date(
-                            `2022/09/${day} ${time}:30:00 GMT-0400`
-                        ).getTime();
+                    for (let day of initialDates) {
+                        const key = day + time * 1000 * 60 * 60;
+                        const key2 = day + time * 1000 * 60 * 60;
                         if (
                             (threshold === 0 && !otherSelections[key]) ||
                             (threshold === 0 && !otherSelections[key2]) ||
@@ -257,13 +254,9 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                 previous = true;
                 for (let time = 20; time >= 9; time--) {
                     let omit = true;
-                    for (let day = 19; day <= 22; day++) {
-                        const key = new Date(
-                            `2022/09/${day} ${time}:00:00 GMT-0400`
-                        ).getTime();
-                        const key2 = new Date(
-                            `2022/09/${day} ${time}:30:00 GMT-0400`
-                        ).getTime();
+                    for (let day of initialDates) {
+                        const key = day + time * 1000 * 60 * 60;
+                        const key2 = day + time * 1000 * 60 * 60;
                         if (
                             (threshold === 0 && !otherSelections[key]) ||
                             (threshold === 0 && !otherSelections[key2]) ||
@@ -408,14 +401,14 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                 // update name
                 const response = await post("/api/event/name", {
                     name: name,
-                    eventId: matrix._id,
+                    eventId: matrix?._id,
                 });
                 console.log(response);
             } else {
                 // create user
                 const user = await post("/api/signup", {
                     name: name,
-                    eventId: matrix._id,
+                    eventId: matrix?._id,
                 });
                 if (user?._id) {
                     setCurrentUser(user);
@@ -502,8 +495,8 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                         <div className="matrix">
                             <Selector
                                 selectableDates={selectableDates}
-                                minTime={13}
-                                maxTime={25}
+                                minTime={matrix?.startTime}
+                                maxTime={matrix?.endTime}
                                 selection={selection}
                                 selections={selections}
                                 maybe={maybe}
@@ -536,6 +529,8 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                                 names={names}
                                 priority={priority}
                                 score={score}
+                                dates={pollDates}
+                                setDates={setPollDates}
                             />
                         </div>
                     )}
@@ -544,8 +539,8 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                     {mode === 0 ? (
                         <Viewer
                             selectableDates={selectableDates}
-                            minTime={13}
-                            maxTime={25}
+                            minTime={matrix?.startTime}
+                            maxTime={matrix?.endTime}
                             selection={selection}
                             allSelections={allSelections}
                             omitTimes={omitTimes}
@@ -561,6 +556,8 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                                 maxNumSelected={maxNumSelected}
                                 priority={priority}
                                 score={score}
+                                dates={dates}
+                                setDates={setDates}
                             />
                         </div>
                     )}

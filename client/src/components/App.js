@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage.js";
 import SettingsPage from "./pages/SettingsPage.js";
 import Navigation from "./modules/Navigation.js";
 import NewPage from "./pages/NewPage.js";
+import OrganizerPage from "./pages/OrganizerPage.js";
 
 /**
  * Define the "App" component
@@ -94,6 +95,10 @@ const App = () => {
 
                     <Route path="/t" exact>
                         <MainPage />
+                    </Route>
+
+                    <Route path="/o" exact>
+                        <OrganizerPage />
                     </Route>
 
                     <Route path="/new" exact>

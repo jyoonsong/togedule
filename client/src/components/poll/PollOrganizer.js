@@ -11,7 +11,7 @@ import Select from "../modules/Select";
 import { compareDate, post } from "../../utils/utilities";
 import { useStore } from "../../store";
 
-const Poll = ({
+const PollOrganizer = ({
     selections,
     otherSelections,
     maybes,
@@ -25,11 +25,6 @@ const Poll = ({
 }) => {
     const currentUser = useStore((state) => state.currentUser);
     const [sortMode, setSortMode] = useState(defaultMode ? defaultMode : 0);
-    const [names, setNames] = useState([]);
-
-    useEffect(() => {
-        getNames();
-    }, [allNames]);
 
     useEffect(() => {
         if (dates?.length === 0) {
@@ -88,15 +83,6 @@ const Poll = ({
         }
     };
 
-    const getNames = async () => {
-        const response = await post("/api/names", {
-            ids: allNames,
-        });
-        console.log(allNames);
-        console.log(response);
-        setNames(response.names);
-    };
-
     const comparePopularity = (a, b) => {
         const numA = parseInt(a);
         const numB = parseInt(b);
@@ -139,7 +125,9 @@ const Poll = ({
                 {allNames.map((userId, index) => (
                     <GridCell key={index}>
                         <PollNameCell>
-                            {userId === currentUser?._id ? "You" : names[index]}
+                            {userId === currentUser?._id
+                                ? "You"
+                                : allNames[index]}
                         </PollNameCell>
                     </GridCell>
                 ))}
@@ -201,4 +189,4 @@ const Poll = ({
     );
 };
 
-export default Poll;
+export default PollOrganizer;

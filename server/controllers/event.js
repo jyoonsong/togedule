@@ -118,7 +118,7 @@ const updateName = async (req, res) => {
         const foundEvent = user.attendingEvents.find((e) =>
             e.equals(req.body.eventId)
         );
-        if (!foundEvent) {
+        if (!foundEvent && req.body.eventId && req.body.eventId !== "null") {
             user.attendingEvents = [...user.attendingEvents, req.body.eventId];
         }
         await user.save();
@@ -146,11 +146,13 @@ const createEvent = async (req, res) => {
             req.session.user = user;
         }
 
+        const sortedDates = req.body.dates.sort();
+
         // create log
         const newEvent = new Event({
             startTime: req.body.startTime,
             endTime: req.body.endTime,
-            dates: req.body.dates,
+            dates: sortedDates,
             duration: req.body.duration,
             organizer: req.session.user?._id,
             selections: [],
