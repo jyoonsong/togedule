@@ -2,10 +2,10 @@
   "name": "togedule",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "api/index.js",
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5000",
-    "start": "nodemon --ignore client/",
+    "start": "nodemon api/index.js --ignore client/",
     "build": "webpack",
     "dev": "concurrently --kill-others \"npm run hotloader\" \"npm start\""
   },

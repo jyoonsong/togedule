@@ -15,7 +15,7 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
-const validator = require("./validator");
+const validator = require("../server/validator");
 validator.checkSetup();
 
 // import libraries needed for the webserver to work!
@@ -24,11 +24,11 @@ const express = require("express"); // backend framework for our node server.
 const session = require("express-session"); // library that stores info about each connected user
 const mongoose = require("mongoose"); // library to connect to MongoDB
 const path = require("path"); // provide utilities for working with file and directory paths
-const auth = require("./controllers/user");
+const auth = require("../server/controllers/user");
 
 // routes
-const indexRouter = require("./routes");
-const eventRouter = require("./routes/event");
+const indexRouter = require("../server/routes");
+const eventRouter = require("../server/routes/event");
 
 // Server configuration below
 const mongoConnectionURL = process.env.MONGO_URL;
