@@ -146,6 +146,37 @@ const updateUser = async (req, res) => {
     }
 };
 
+const updateOrganizer = async (req, res) => {
+    try {
+        let user = req.session.user;
+        if (!user) {
+            // create user
+            user = await createUser("");
+        } else {
+            // existing user
+            user = await User.findById(req.session.user?._id);
+        }
+
+        // add event to organizing events
+        const foundEvent = user.organizingEvents.find((e) =>
+            e.equals(req.body.eventId)
+        );
+        if (!foundEvent && req.body.eventId && req.body.eventId !== "null") {
+            user.organizingEvents = [
+                ...user.organizingEvents,
+                req.body.eventId,
+            ];
+        }
+        await user.save();
+        req.session.user = user;
+
+        return res.status(200).send(user);
+    } catch (err) {
+        console.log(`Failed to sign up: ${err}`);
+        res.status(401).send({ err });
+    }
+};
+
 // gets user from DB, or makes a new account if it doesn't exist yet
 const createUser = async (name) => {
     const newUser = new User({
@@ -246,4 +277,5 @@ module.exports = {
     getNames,
     updateUser,
     loginByUsername,
+    updateOrganizer,
 };

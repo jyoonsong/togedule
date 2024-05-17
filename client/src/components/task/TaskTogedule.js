@@ -11,6 +11,7 @@ import dragImage from "../../images/drag-left.gif";
 import Poll from "../poll/Poll";
 import Scale from "../modules/Scale";
 import { notification } from "antd-notifications-messages";
+import { Link } from "react-router-dom";
 
 const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
     const initialDates = matrix.dates.map((date) => new Date(date));
@@ -481,7 +482,8 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
                             <Button
                                 className="w-100 my-3"
                                 variant="outline-primary"
-                                onClick={changeMode}
+                                as={Link}
+                                to={`/o?id=${matrix?._id}`}
                             >
                                 I'm the organizer
                             </Button>

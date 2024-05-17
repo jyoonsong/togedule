@@ -19,6 +19,7 @@ router.post("/signup", user.signup);
 router.post("/decide", user.decideMode);
 router.post("/names", user.getNames);
 router.post("/update", user.updateUser);
+router.post("/organizer", user.updateOrganizer);
 router.get("/whoami", (req, res) => {
     if (!req.session.user) {
         // not logged in
