@@ -70,10 +70,6 @@ const Poll = ({
         }
     }, [selections, sortMode, otherSelections]);
 
-    useEffect(() => {
-        console.log(new Date(dates[0]));
-    }, [dates]);
-
     const changeMode = (newMode) => {
         setSortMode(newMode);
 
