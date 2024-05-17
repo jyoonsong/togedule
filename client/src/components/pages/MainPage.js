@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { get, post } from "../../utils/utilities";
 
-import TaskTogedule from "../task/TaskTogedule";
+import Togedule from "../modules/Togedule";
 import { useStore } from "../../store";
 
 const MainPage = ({ group, total }) => {
@@ -32,7 +32,7 @@ const MainPage = ({ group, total }) => {
             <Row>
                 <Col xs={12}>
                     {matrix ? (
-                        <TaskTogedule
+                        <Togedule
                             setValid={setValid}
                             matrix={matrix}
                             note={note}

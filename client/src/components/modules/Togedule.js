@@ -4,16 +4,16 @@ import { useStore } from "../../store";
 import { get, post } from "../../utils/utilities";
 import Selector from "../matrix/Selector";
 import Viewer from "../matrix/Viewer";
-import Select from "../modules/Select";
+import Select from "./Select";
 import PollSelector from "../poll/PollSelector";
 
 import dragImage from "../../images/drag-left.gif";
 import Poll from "../poll/Poll";
-import Scale from "../modules/Scale";
+import Scale from "./Scale";
 import { notification } from "antd-notifications-messages";
 import { Link } from "react-router-dom";
 
-const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
+const Togedule = ({ setValid, matrix, setNote, note, total }) => {
     const initialDates = matrix.dates.map((date) => new Date(date));
     const currentUser = useStore((state) => state.currentUser);
     const setCurrentUser = useStore((state) => state.setCurrentUser);
@@ -579,4 +579,4 @@ const TaskTogedule = ({ setValid, matrix, setNote, note, total }) => {
     );
 };
 
-export default TaskTogedule;
+export default Togedule;
