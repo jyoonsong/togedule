@@ -1,0 +1,648 @@
+[{
+  "_id": {
+    "$oid": "66636bf50bd4e2000ca03b6a"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636ccce02bc5000cc3f10d"
+      },
+      "condition": "words",
+      "decision": "Wednesday at 9:00am"
+    },
+    {
+      "_id": {
+        "$oid": "66636dd90bd4e2000ca03c5d"
+      },
+      "condition": "calendar",
+      "decision": "Monday at 10:30am"
+    },
+    {
+      "_id": {
+        "$oid": "66636ea6e21e33000ca2ca55"
+      },
+      "condition": "togedule",
+      "decision": "Monday at 2:30pm"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:22:13.111Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:34:36.983Z"
+  },
+  "order": 48
+},
+{
+  "_id": {
+    "$oid": "66636c890bd4e2000ca03bb6"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636d20e02bc5000cc3f150"
+      },
+      "condition": "words",
+      "decision": "Wednesday Jun 19 from 10:30-11:00 AM"
+    },
+    {
+      "_id": {
+        "$oid": "66636e080bd4e2000ca03c64"
+      },
+      "condition": "togedule",
+      "decision": "Tuesday 6/18 at 9:00 AM"
+    },
+    {
+      "_id": {
+        "$oid": "66636f4ce02bc5000cc3f19b"
+      },
+      "condition": "calendar",
+      "decision": "Mon 6/17 at 2PM"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:24:41.861Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:38:23.493Z"
+  },
+  "order": 49
+},
+{
+  "_id": {
+    "$oid": "66636cb9e02bc5000cc3f0d4"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636e5c0bd4e2000ca03c8c"
+      },
+      "condition": "calendar",
+      "decision": "Everybody listed is available and only 22 is unavailable who is not listed as important or even less important so I would assume they do not need to attend."
+    },
+    {
+      "_id": {
+        "$oid": "66637006e21e33000ca2cacf"
+      },
+      "condition": "words",
+      "decision": "I would schedule the meeting at 10 AM on 19 June, the Wednesday due to all attendees being available and being within their availability times meaning no conflicts or issues."
+    },
+    {
+      "_id": {
+        "$oid": "666371442f276b000d49e4ac"
+      },
+      "condition": "togedule",
+      "decision": "It seems like 22 would be able to attend on one day which would be the 20th at 11 AM, however 3C is unsure if they would be able to attend and as such it would be better to pick a date when 5 groups can attend rather than 4 groups being confirmed with 1 being a maybe confirmed, therefor I picked 9 AM on Tuesday as the ideal date."
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:25:29.341Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:49:10.320Z"
+  },
+  "order": 50
+},
+{
+  "_id": {
+    "$oid": "66636cd9e02bc5000cc3f114"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636e540bd4e2000ca03c85"
+      },
+      "condition": "calendar",
+      "decision": "6/18 Tuesday at 9:30am. There are more less important people in this meeting time that are unavailable."
+    },
+    {
+      "_id": {
+        "$oid": "66636f5ce02bc5000cc3f1a2"
+      },
+      "condition": "togedule",
+      "decision": "Monday 17th, 3:00pm"
+    },
+    {
+      "_id": {
+        "$oid": "6663706fe02bc5000cc3f1e0"
+      },
+      "condition": "words",
+      "decision": "2pm on Thursday "
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:26:01.139Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:44:42.626Z"
+  },
+  "order": 51
+},
+{
+  "_id": {
+    "$oid": "66636cf30bd4e2000ca03bfa"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636e94e21e33000ca2ca4e"
+      },
+      "condition": "togedule",
+      "decision": "I selected this option as the majority of people could make this date and everyone was equally important. Hopefully D2 can move something around"
+    },
+    {
+      "_id": {
+        "$oid": "66636fcae02bc5000cc3f1c4"
+      },
+      "condition": "words",
+      "decision": "Tuesday 2.30pm"
+    },
+    {
+      "_id": {
+        "$oid": "666370b30bd4e2000ca03cfd"
+      },
+      "condition": "calendar",
+      "decision": "9am thursday as all can attend"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:26:27.592Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:48:36.458Z"
+  },
+  "order": 52
+},
+{
+  "_id": {
+    "$oid": "66636f09e21e33000ca2ca7b"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66636f84e02bc5000cc3f1ac"
+      },
+      "condition": "togedule",
+      "decision": "Thursday 6/20 at 1pm"
+    },
+    {
+      "_id": {
+        "$oid": "666370b20bd4e2000ca03cf6"
+      },
+      "condition": "calendar",
+      "decision": "6/17 at 1pm"
+    },
+    {
+      "_id": {
+        "$oid": "666371482f276b000d49e4b3"
+      },
+      "condition": "words",
+      "decision": "Monday 11am "
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T20:35:21.994Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T20:45:46.022Z"
+  },
+  "order": 53
+},
+{
+  "_id": {
+    "$oid": "66637643603792000cf8322f"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "666378c0d4a8bd000c9b0a5b"
+      },
+      "condition": "words",
+      "decision": "Wednesday 6/19 -- 9:30 AM - 10:30 AM"
+    },
+    {
+      "_id": {
+        "$oid": "66637a7ad6663c000c236922"
+      },
+      "condition": "calendar",
+      "decision": "Wednesday, 1-1:30 PM"
+    },
+    {
+      "_id": {
+        "$oid": "66637bbafb1c68000c250a7d"
+      },
+      "condition": "togedule",
+      "decision": "Monday @ 2:30PM"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T21:06:11.708Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T21:32:08.789Z"
+  },
+  "order": 54
+},
+{
+  "_id": {
+    "$oid": "666378b3d4a8bd000c9b09de"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "666379a5d4a8bd000c9b0a85"
+      },
+      "condition": "words",
+      "decision": "Nearly everyone said they were available Monday afternoon, with varying times after 1PM. Otherwise people said they preferred Wednesdays, but they didn't say they couldn't do Monday if it worked for everyone else. \n\nSo I would do Monday, the 17th at 1:30PM. Anyone that missed the meeting could ask someone else what had happened."
+    },
+    {
+      "_id": {
+        "$oid": "66637ae3d4a8bd000c9b0b0b"
+      },
+      "condition": "togedule",
+      "decision": "I would pick Tuesday 6/18 at 9AM, as all but one person (F1) can attend. Someone else can update F1 as to what happened. Most people don't like meetings starting on a half hour, and would rather have them start on the hour, so that makes more sense than option 2. Option 3 has the most amount of people who may not be able to attend."
+    },
+    {
+      "_id": {
+        "$oid": "66637d85d4a8bd000c9b0b47"
+      },
+      "condition": "calendar",
+      "decision": "I would pick 6/18 at 1PM. That way people have had lunch hopefully. Most any meeting time is going to have the same 4 people be unavailable.) Some times are even worse. I highly doubt anyone (unless they normally work those hours) Want to have a meeting anywhere from 6PM-after 11PM at night. On this one, I don't know if the very important/less important refers to the people's availability, or their importance to the meeting, but this time slot only misses one important person, instead of potentially several."
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T21:16:35.106Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T21:40:03.576Z"
+  },
+  "order": 55
+},
+{
+  "_id": {
+    "$oid": "666378b8d4a8bd000c9b0a1c"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66637962d6663c000c236907"
+      },
+      "condition": "calendar",
+      "decision": "Jun 20th, 2:30pm"
+    },
+    {
+      "_id": {
+        "$oid": "66637ad6d4a8bd000c9b0b04"
+      },
+      "condition": "words",
+      "decision": "Wednesday 10am-10:30am"
+    },
+    {
+      "_id": {
+        "$oid": "66637bc8fb1c68000c250a84"
+      },
+      "condition": "togedule",
+      "decision": "6/17 Mon 2:30pm"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T21:16:40.423Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T21:32:27.646Z"
+  },
+  "order": 56
+},
+{
+  "_id": {
+    "$oid": "6663791dd6663c000c2368c7"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66637ba4fb1c68000c250a70"
+      },
+      "condition": "calendar",
+      "decision": "I will inadvertently scheduled the meeting to Thursday at 9am as a result of the rate of availability and how important and crucial it is as the availability rate is highly great compare to other days and time. "
+    },
+    {
+      "_id": {
+        "$oid": "66637daed4a8bd000c9b0b4e"
+      },
+      "condition": "togedule",
+      "decision": "Priority wise , The meeting will be scheduled to be held on Monday 17th by 4;30pm as there is a favorable attendance in place to achieve the meeting objective."
+    },
+    {
+      "_id": {
+        "$oid": "66637f9dd4a8bd000c9b0b84"
+      },
+      "condition": "words",
+      "decision": "The meeting will be schedule to Wednesday at 2:30pm as majorly all the 'very important ' groups will be available and that remains the major factor in deciding. "
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T21:18:21.817Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T21:47:58.405Z"
+  },
+  "order": 57
+},
+{
+  "_id": {
+    "$oid": "66637a43d4a8bd000c9b0a9d"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "66637ab3d4a8bd000c9b0afd"
+      },
+      "condition": "togedule",
+      "decision": "6/19 at 2:30"
+    },
+    {
+      "_id": {
+        "$oid": "66637b157d3f5c000c7cca9d"
+      },
+      "condition": "words",
+      "decision": "Monday 17th at 2pm"
+    },
+    {
+      "_id": {
+        "$oid": "66637b72fb1c68000c250a0b"
+      },
+      "condition": "calendar",
+      "decision": "6/18 at 7am"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T21:23:15.762Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T21:29:01.495Z"
+  },
+  "order": 58
+},
+{
+  "_id": {
+    "$oid": "6663845b8201b6000c92b024"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663866ab2d5cc000c155afb"
+      },
+      "condition": "words",
+      "decision": "I think on wednesday 9th of june between 9 and 9:30 AM would be most suited."
+    },
+    {
+      "_id": {
+        "$oid": "666389a4d645fb000ca00804"
+      },
+      "condition": "calendar",
+      "decision": "9AM on 6/20 Thursday"
+    },
+    {
+      "_id": {
+        "$oid": "66638a45d645fb000ca00821"
+      },
+      "condition": "togedule",
+      "decision": "6/17 Monday 2:30pm"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-07T22:06:19.309Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-07T22:33:06.688Z"
+  },
+  "order": 60
+},
+{
+  "_id": {
+    "$oid": "6663af49d9131f000ca4d007"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663aff067a318000cd5097f"
+      },
+      "condition": "togedule",
+      "decision": ""
+    },
+    {
+      "_id": {
+        "$oid": "6663b1981c0f79000c6892e2"
+      },
+      "condition": "calendar",
+      "decision": "6/20 at 12pm"
+    },
+    {
+      "_id": {
+        "$oid": "6663b24d67a318000cd509e6"
+      },
+      "condition": "words",
+      "decision": "Monday the 17th at 8am"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:09:29.011Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T01:24:08.652Z"
+  },
+  "order": 59
+},
+{
+  "_id": {
+    "$oid": "6663b06e67a318000cd50986"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663b158d9131f000ca4d06a"
+      },
+      "condition": "words",
+      "decision": "wed 11am"
+    },
+    {
+      "_id": {
+        "$oid": "6663b1cd1c0f79000c6892ef"
+      },
+      "condition": "togedule",
+      "decision": "6/18 9am"
+    },
+    {
+      "_id": {
+        "$oid": "6663b29367a318000cd509ed"
+      },
+      "condition": "calendar",
+      "decision": "6/17 10:30"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:14:22.421Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T01:24:48.747Z"
+  },
+  "order": 61
+},
+{
+  "_id": {
+    "$oid": "6663b39267a318000cd50a16"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663b5088971c6000c88cb24"
+      },
+      "condition": "calendar",
+      "decision": "my scheduling time would be on tuesday, at an optimal time of 9:30 am, just 30 minutes after a 9-5 work day starts, assuming workers are currently working those hours. I did not do it on the monday even though it is the start of the week because there were 2 people missing at the same time. So I decided to push it back a day."
+    },
+    {
+      "_id": {
+        "$oid": "6663b5e58971c6000c88cb84"
+      },
+      "condition": "words",
+      "decision": "Wednesday at 10-10:30am as all important attendees are available."
+    },
+    {
+      "_id": {
+        "$oid": "6663b689f5fc9c000c1718f6"
+      },
+      "condition": "togedule",
+      "decision": "6/18 at 9:30 AM."
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:27:46.913Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T01:41:49.612Z"
+  },
+  "order": 62
+},
+{
+  "_id": {
+    "$oid": "6663b6c5f5fc9c000c1718fd"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663b77ad9131f000ca4d0d9"
+      },
+      "condition": "togedule",
+      "decision": "3PM, everyone is available except for D2, and as long as D2 may have some time in between not being available to make the meeting"
+    },
+    {
+      "_id": {
+        "$oid": "6663b815d9131f000ca4d0f3"
+      },
+      "condition": "words",
+      "decision": "Monday at 4:30"
+    },
+    {
+      "_id": {
+        "$oid": "6663b864d9131f000ca4d10b"
+      },
+      "condition": "calendar",
+      "decision": "Tuesday 1 PM"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:41:25.232Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T01:48:54.343Z"
+  },
+  "order": 64
+},
+{
+  "_id": {
+    "$oid": "6663b7038971c6000c88cbb5"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663b76dd9131f000ca4d0d2"
+      },
+      "condition": "togedule",
+      "decision": "Everyone is available at this time, whereas no other option has the same perfect availability."
+    },
+    {
+      "_id": {
+        "$oid": "6663b90fd9131f000ca4d123"
+      },
+      "condition": "calendar",
+      "decision": "This meeting time had everyone but four participants available. Whereas some other times listed had the same amount of participants available, they were beyond the 9PM time limit."
+    },
+    {
+      "_id": {
+        "$oid": "6663ba12f5fc9c000c171966"
+      },
+      "condition": "words",
+      "decision": "2:00PM on Monday."
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:42:27.754Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T01:56:53.957Z"
+  },
+  "order": 65
+},
+{
+  "_id": {
+    "$oid": "6663baaf8971c6000c88cc25"
+  },
+  "stage": 8,
+  "decisions": [
+    {
+      "_id": {
+        "$oid": "6663bb24d9131f000ca4d144"
+      },
+      "condition": "words",
+      "decision": "Wednesday 9am"
+    },
+    {
+      "_id": {
+        "$oid": "6663bbbe8971c6000c88cc7c"
+      },
+      "condition": "calendar",
+      "decision": "Tuesday 13:30"
+    },
+    {
+      "_id": {
+        "$oid": "6663bc34bdc161000c181082"
+      },
+      "condition": "togedule",
+      "decision": "Monday 14:30"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-06-08T01:58:07.225Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-08T02:05:52.287Z"
+  },
+  "order": 66
+}]
