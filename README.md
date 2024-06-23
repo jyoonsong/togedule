@@ -44,20 +44,4 @@ Run `npm install` and `npm run dev` in your terminal. The recommended node versi
 
 ## Authors and Citation
 
-Authors: Jaeyoon Song, Zahra Ashktorab, and Thomas W. Malone
-
-Please cite our paper if you use the code or data in this repository.
-
-```latex
-@inproceedings{Song2025Togedule,
-  author = {Song, Jaeyoon and Ashktorab, Zahra and Malone, Thomas W.},
-  title = {Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings},
-  year = {2025},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  booktitle = {In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23)},
-  keywords = {Human-AI interaction, agents, generative AI, large language models},
-  location = {San Francisco, CA, USA},
-  series = {CSCW '25}
-}
-```
+Anonymized for now
