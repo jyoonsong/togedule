@@ -1,8 +1,8 @@
-# Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings
+# Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability
 
 ![How Togedule adjusts the pool of choices based on prior inputs](https://github.com/jyoonsong/togedule/assets/17509651/13515d7e-24ca-4079-8a6e-94fb2a08281f)
 
-This repository accompanies our research paper titled ["Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings."]()
+This repository accompanies our research paper titled ["Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability."]()
 
 ## About Togedule
 
@@ -50,14 +50,13 @@ Please cite our paper if you use the code or data in this repository.
 
 ```latex
 @inproceedings{Song2025Togedule,
+  title = {Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability},
   author = {Song, Jaeyoon and Ashktorab, Zahra and Malone, Thomas W.},
-  title = {Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings},
+  journal={Proceedings of the ACM on Human-Computer Interaction},
   year = {2025},
   publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
   booktitle = {In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23)},
-  keywords = {Human-AI interaction, agents, generative AI, large language models},
-  location = {San Francisco, CA, USA},
+  keywords = {Human-AI Interaction, Scheduling, Large Language Models},
   series = {CSCW '25}
 }
 ```
