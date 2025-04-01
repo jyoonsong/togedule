@@ -16,8 +16,6 @@ Details are provided in the paper above.
 The `client` and `server` directories contain the code for the Togedule system.
 Below, we document the steps for setting up and running Togedule on your local machine.
 
-Alternatively, you can try out [our live demo](https://togedule.vercel.app).
-
 ## Running an instance locally
 
 ### Step 1. Clone the repository
@@ -55,7 +53,6 @@ Please cite our paper if you use the code or data in this repository.
   journal={Proceedings of the ACM on Human-Computer Interaction},
   year = {2025},
   publisher = {Association for Computing Machinery},
-  booktitle = {In the 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23)},
   keywords = {Human-AI Interaction, Scheduling, Large Language Models},
   series = {CSCW '25}
 }
