@@ -40,9 +40,7 @@ Set the organization ID as `OPENAI_ORG_ID` and the API key as `OPENAI_API_KEY`. 
 
 Run `npm install` and `npm run dev` in your terminal. The recommended node version is 16.
 
-## Authors and Citation
-
-Authors: Jaeyoon Song, Zahra Ashktorab, and Thomas W. Malone
+## Citation
 
 Please cite our paper if you use the code or data in this repository.
 
