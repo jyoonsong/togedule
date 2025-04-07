@@ -39,6 +39,7 @@ Set the organization ID as `OPENAI_ORG_ID` and the API key as `OPENAI_API_KEY`. 
 ### Step 5. Run the server and client
 
 Run `npm install` and `npm run dev` in your terminal. The recommended node version is 16.
+You can use vercel to deploy the application (See `vercel.example.json`).
 
 ## Citation
 
