@@ -1,8 +1,8 @@
-# Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings
+# Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability
 
 ![How Togedule adjusts the pool of choices based on prior inputs](https://github.com/jyoonsong/togedule/assets/17509651/13515d7e-24ca-4079-8a6e-94fb2a08281f)
 
-This repository accompanies our research paper titled ["Togedule: Adaptive Representation of Group Availability Using Large Language Models for Scheduling Meetings."]()
+This repository accompanies our research paper titled ["Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability."]()
 
 ## About Togedule
 
@@ -15,8 +15,6 @@ Details are provided in the paper above.
 
 The `client` and `server` directories contain the code for the Togedule system.
 Below, we document the steps for setting up and running Togedule on your local machine.
-
-Alternatively, you can try out [our live demo](https://togedule.vercel.app).
 
 ## Running an instance locally
 
@@ -44,4 +42,18 @@ Run `npm install` and `npm run dev` in your terminal. The recommended node versi
 
 ## Authors and Citation
 
-Anonymized for now
+Authors: Jaeyoon Song, Zahra Ashktorab, and Thomas W. Malone
+
+Please cite our paper if you use the code or data in this repository.
+
+```latex
+@inproceedings{Song2025Togedule,
+  title = {Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability},
+  author = {Song, Jaeyoon and Ashktorab, Zahra and Malone, Thomas W.},
+  journal={Proceedings of the ACM on Human-Computer Interaction},
+  year = {2025},
+  publisher = {Association for Computing Machinery},
+  keywords = {Human-AI Interaction, Scheduling, Large Language Models},
+  series = {CSCW '25}
+}
+```
