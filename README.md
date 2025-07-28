@@ -1,4 +1,4 @@
-# Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability
+# Togedule
 
 ![How Togedule adjusts the pool of choices based on prior inputs](https://github.com/user-attachments/assets/7f7b63bc-aca9-4caa-8b18-fd57535becb0)
 
