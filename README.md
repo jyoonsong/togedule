@@ -1,6 +1,7 @@
 # Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability
 
-![How Togedule adjusts the pool of choices based on prior inputs](https://github.com/jyoonsong/togedule/assets/17509651/13515d7e-24ca-4079-8a6e-94fb2a08281f)
+![How Togedule adjusts the pool of choices based on prior inputs](https://github.com/user-attachments/assets/7f7b63bc-aca9-4caa-8b18-fd57535becb0)
+
 
 This repository accompanies our research paper titled ["Togedule: Scheduling Meetings with Large Language Models and Adaptive Representations of Group Availability."](https://arxiv.org/abs/2505.01000)
 
